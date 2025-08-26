@@ -15,11 +15,11 @@ export default (): Config => ({
         host: getEnv('APP_HOST'),
     },
     database: {
-        host: getEnv('POSTGRES_HOST'),
-        port: parseInt(getEnv('POSTGRES_PORT'), 10),
-        user: getEnv('POSTGRES_USER'),
-        password: getEnv('POSTGRES_PASSWORD'),
-        db: getEnv('POSTGRES_DB'),
+        // host: getEnv('POSTGRES_HOST'),
+        // port: parseInt(getEnv('POSTGRES_PORT'), 10),
+        // user: getEnv('POSTGRES_USER'),
+        // password: getEnv('POSTGRES_PASSWORD'),
+        // db: getEnv('POSTGRES_DB'),
         url: getEnv('DATABASE_URL')
     },
     redis: {

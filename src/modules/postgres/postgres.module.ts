@@ -15,11 +15,12 @@ import {Config, DatabaseConfig} from "../../configs/config-type";
                 const config = configService.get<DatabaseConfig>('database');
                 return {
                     type: 'postgres',
-                    host: config?.host,
-                    port: config?.port,
-                    username: config?.user,
-                    password: config?.password,
-                    database: config?.db,
+                    // host: config?.host,
+                    // port: config?.port,
+                    // username: config?.user,
+                    // password: config?.password,
+                    // database: config?.db,
+                    url: config?.url,
                     entities: [path.join(
                         process.cwd(),
                         'dist',
@@ -37,8 +38,8 @@ import {Config, DatabaseConfig} from "../../configs/config-type";
                         '*.js',
                     )],
 
-                    synchronize: false,
-                    migrationsRun: false,
+                    synchronize: true,
+                    migrationsRun: true,
                 };
             },
             inject: [ConfigService],

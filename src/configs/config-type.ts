@@ -10,11 +10,11 @@ export type AppConfig = {
 };
 
 export type DatabaseConfig = {
-    host: string;
-    port: number;
-    user: string;
-    password: string;
-    db: string;
+    // host: string;
+    // port: number;
+    // user: string;
+    // password: string;
+    // db: string;
     url:string;
 };
 
