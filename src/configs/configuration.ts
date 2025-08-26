@@ -20,10 +20,12 @@ export default (): Config => ({
         user: getEnv('POSTGRES_USER'),
         password: getEnv('POSTGRES_PASSWORD'),
         db: getEnv('POSTGRES_DB'),
+        url: getEnv('DATABASE_URL')
     },
     redis: {
         host: getEnv('REDIS_HOST'),
         port: parseInt(getEnv('REDIS_PORT'), 10),
         password: getEnv('REDIS_PASSWORD'),
+        url: getEnv('REDIS_URL'),
     }
 });

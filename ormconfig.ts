@@ -9,17 +9,18 @@ const config = configuration().database;
 
 export default new DataSource({
     type: 'postgres',
-    host: config?.host,
-    port: config?.port,
-    username: config?.user,
-    password: config?.password,
-    database: config?.db,
+    // host: config?.host,
+    // port: config?.port,
+    // username: config?.user,
+    // password: config?.password,
+    // database: config?.db,
+    url: config?.url,
     entities: [path.join(
         process.cwd(),
         'src',
         'database',
         'entities',
-        '*.entity.ts',
+        '*.entity.{ts,js}',
     )],
     migrations: [path.join(
         process.cwd(),
@@ -28,6 +29,6 @@ export default new DataSource({
         'migrations',
         '*.ts',
     )],
+    synchronize: true,
 
-    synchronize: false,
 });

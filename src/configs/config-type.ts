@@ -15,11 +15,14 @@ export type DatabaseConfig = {
     user: string;
     password: string;
     db: string;
+    url:string;
 };
 
 export type RedisConfig = {
     host: string;
     port: number;
     password: string;
+
+    url:string;
 };
 

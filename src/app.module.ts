@@ -13,7 +13,7 @@ import {RedisModule} from "./modules/redis/redis.module";
         ConfigModule.forRoot({
             load: [configuration],
             isGlobal: true,
-            envFilePath: 'backend/.env',
+            envFilePath: '.env',
         }),
         TasksModule,
         RepositoryModule,

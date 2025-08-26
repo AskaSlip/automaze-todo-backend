@@ -11,9 +11,12 @@ import {REDIS_CLIENT} from "./models/redis.constants";
             provide: (REDIS_CLIENT),
             useFactory: (configService: ConfigService<Config>) => {
                 const config = configService.get<RedisConfig>('redis');
+                if (config?.url) {
+                    return new Redis(config.url);
+                }
                 return new Redis({
-                    port: config?.port,
-                    host: config?.host,
+                    host: config?.host ?? 'localhost',
+                    port: config?.port ?? 6379,
                     password: config?.password,
                 });
             },
